@@ -1,0 +1,9 @@
+src/commands/utils
+src/deploy-commands.ts
+src/index.ts
+src/config.ts
+
+dist/
+node_modules/
+tests/mocks/
+*.d.ts
