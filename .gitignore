@@ -1,5 +1,5 @@
 node_modules/
-src/config.ts
 .env
 *.log
 .DS_Store
+dist

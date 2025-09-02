@@ -1,11 +1,12 @@
 import { Client, Events, GatewayIntentBits, Collection, } from "discord.js";
-import config from "./config.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
 // Get __dirname equivalent in ES6
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+dotenv.config({ path: path.join(__dirname, "../.env") });
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -70,5 +71,5 @@ client.once(Events.ClientReady, (readyClient) => {
     console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 // Log in to Discord with your client's token
-client.login(config.token);
+client.login(process.env.DISCORD_TOKEN);
 //# sourceMappingURL=index.js.map
